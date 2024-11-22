@@ -15,10 +15,10 @@ class Person {
     greet() {
       console.log(`Hello, my name is ${this.name}, I am ${this.age} years old.`);
     }
-  }
-  
-  // Define the Employee class that extends Person
-  class Employee extends Person {
+}
+
+// Define the Employee class that extends Person
+class Employee extends Person {
     /**
      * Constructs a new Employee instance.
      * @param {string} name - The employee's name.
@@ -38,8 +38,8 @@ class Person {
         `Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}.`
       );
     }
-  }
-  
-  // Expose the classes to the global window object for Cypress testing
-  window.Person = Person;
-  window.Employee = Employee;
+}
+
+// Expose the classes to the global window object for Cypress testing
+window.Person = Person;
+window.Employee = Employee;
