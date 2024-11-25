@@ -23,3 +23,14 @@ class Employee extends Person {
 // Attach classes to the global window object
 window.Person = Person;
 window.Employee = Employee;
+
+// Call greet and jobGreet after small delays to ensure Cypress captures them
+setTimeout(() => {
+  const person = new window.Person('Alice', 25);
+  person.greet(); // Should log: Hello, my name is Alice, I am 25 years old.
+}, 500);
+
+setTimeout(() => {
+  const employee = new window.Employee('Bob', 30, 'Manager');
+  employee.jobGreet(); // Should log: Hello, my name is Bob, I am 30 years old, and my job title is Manager.
+}, 1000);
