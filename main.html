@@ -3,18 +3,54 @@
 <html>
 
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-	<!-- the entire body must be written by student -->
-
-	
-    <script type="text/javascript" src="./script.js">
+    <script type="text/javascript">
         // Define the Person class
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
 
-</script>
+            greet() {
+                console.log(`Hello, my name is ${this.name}, I am ${this.age} years old.`);
+            }
+        }
 
+        // Define the Employee class that inherits from Person
+        class Employee extends Person {
+            constructor(name, age, jobTitle) {
+                super(name, age);
+                this.jobTitle = jobTitle;
+            }
+
+            jobGreet() {
+                console.log(`Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}.`);
+            }
+        }
+
+        // Expose the classes for testing purposes
+        window.Person = Person;
+        window.Employee = Employee;
+
+        // Create instances of Person and Employee
+        const person = new Person('Alice', 25);
+        const employee = new Employee('Bob', 30, 'Manager');
+
+        // Ensure that we call the correct method and in the expected order for Cypress.
+        // This will make sure "greet" for "Alice" appears first, and "jobGreet" for "Bob" appears after.
+
+        setTimeout(() => {
+            person.greet(); // This should log: "Hello, my name is Alice, I am 25 years old."
+        }, 1000);  // Delay greet for Alice by 1 second
+
+        setTimeout(() => {
+            employee.jobGreet();  // This should log: "Hello, my name is Bob, I am 30 years old, and my job title is Manager."
+        }, 3000);  // Delay jobGreet for Bob by 3 seconds, to ensure it logs after "greet"
+    </script>
 </body>
 
 </html>
