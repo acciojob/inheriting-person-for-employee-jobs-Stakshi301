@@ -28,7 +28,7 @@ window.Employee = Employee;
 setTimeout(() => {
   const person = new window.Person('Alice', 25);
   person.greet(); // Should log: Hello, my name is Alice, I am 25 years old.
-}, 500);
+}, 100);
 
 setTimeout(() => {
   const employee = new window.Employee('Bob', 30, 'Manager');
