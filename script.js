@@ -15,10 +15,10 @@ class Employee extends Person {
     this.jobTitle = jobTitle;
   }
 
-//   jobGreet() {
-//     console.log(`Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}.`);
-//   }
-// }
+  jobGreet() {
+    console.log(`Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}.`);
+  }
+}
 
 // Exposing for testing
 window.Person = Person;
@@ -33,6 +33,6 @@ setTimeout(() => {
   person.greet(); // Expected output: "Hello, my name is Alice, I am 25 years old."
 }, 1000);
 
-// setTimeout(() => {
-//   employee.jobGreet(); // Expected output: "Hello, my name is Bob, I am 30 years old, and my job title is Manager."
-// }, 3000);
+setTimeout(() => {
+  employee.jobGreet(); // Expected output: "Hello, my name is Bob, I am 30 years old, and my job title is Manager."
+}, 3000);
