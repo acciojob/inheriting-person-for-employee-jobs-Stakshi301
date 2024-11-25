@@ -1,4 +1,3 @@
-// Define the Person class
 class Person {
   constructor(name, age) {
     this.name = name;
@@ -10,7 +9,6 @@ class Person {
   }
 }
 
-// Define the Employee class that extends Person
 class Employee extends Person {
   constructor(name, age, jobTitle) {
     super(name, age);
@@ -22,6 +20,6 @@ class Employee extends Person {
   }
 }
 
-// Expose classes to Cypress test
+// Attach classes to the global window object
 window.Person = Person;
 window.Employee = Employee;
