@@ -25,10 +25,16 @@
         window.Person = Person;
         window.Employee = Employee;
 
-        // Create Person and Employee instances
+        // Create instances of Person and Employee
         const person = new Person('Alice', 25);
         const employee = new Employee('Bob', 30, 'Manager');
 
-        // Ensure the greet and jobGreet methods are being called correctly
-        person.greet(); // Expected output: "Hello, my name is Alice, I am 25 years old."
-        employee.jobGreet(); 
+        // Call the greet method for Person (this should print for Cypress)
+        setTimeout(() => {
+            person.greet();  // Expected output: "Hello, my name is Alice, I am 25 years old."
+        }, 1000);
+
+        // Call the jobGreet method for Employee (this should print for Cypress)
+        setTimeout(() => {
+            employee.jobGreet();  // Expected output: "Hello, my name is Bob, I am 30 years old, and my job title is Manager."
+        }, 3000);
