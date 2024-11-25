@@ -39,16 +39,14 @@
         const person = new Person('Alice', 25);
         const employee = new Employee('Bob', 30, 'Manager');
 
-        // Ensure that we call the correct method and in the expected order for Cypress.
-        // This will make sure "greet" for "Alice" appears first, and "jobGreet" for "Bob" appears after.
-
+        // Ensure the greet and jobGreet methods are called in sequence with timeouts.
         setTimeout(() => {
-            person.greet(); // This should log: "Hello, my name is Alice, I am 25 years old."
+            person.greet();  // Expected output: "Hello, my name is Alice, I am 25 years old."
         }, 1000);  // Delay greet for Alice by 1 second
 
         setTimeout(() => {
-            employee.jobGreet();  // This should log: "Hello, my name is Bob, I am 30 years old, and my job title is Manager."
-        }, 3000);  // Delay jobGreet for Bob by 3 seconds, to ensure it logs after "greet"
+            employee.jobGreet();  // Expected output: "Hello, my name is Bob, I am 30 years old, and my job title is Manager."
+        }, 3000);  // Delay jobGreet for Bob by 3 seconds to ensure correct order
     </script>
 </body>
 
