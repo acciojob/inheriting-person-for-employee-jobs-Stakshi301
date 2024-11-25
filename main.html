@@ -36,6 +36,18 @@
     // Expose Person and Employee classes for testing
     window.Person = Person;
     window.Employee = Employee;
+
+	  const person = new Person('Alice', 25);
+const employee = new Employee('Bob', 30, 'Manager');
+
+// Call greet for Person and jobGreet for Employee in sequence with delays
+setTimeout(() => {
+  person.greet(); // Expected output: "Hello, my name is Alice, I am 25 years old."
+}, 1000);
+
+setTimeout(() => {
+  employee.jobGreet(); // Expected output: "Hello, my name is Bob, I am 30 years old, and my job title is Manager."
+}, 3000);
   </script>
 
 </body>
