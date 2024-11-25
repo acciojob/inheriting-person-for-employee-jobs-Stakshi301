@@ -1,4 +1,4 @@
-// Define the Person class
+ // Define the Person class
 class Person {
   /**
    * Constructs a new Person instance.
@@ -18,22 +18,13 @@ class Person {
   }
 }
 
-// Define the Employee class that extends Person
+// Define the Employee class which extends Person
 class Employee extends Person {
-  /**
-   * Constructs a new Employee instance.
-   * @param {string} name - The employee's name.
-   * @param {number} age - The employee's age.
-   * @param {string} jobTitle - The employee's job title.
-   */
   constructor(name, age, jobTitle) {
     super(name, age); // Call the parent class constructor
     this.jobTitle = jobTitle;
   }
 
-  /**
-   * Prints a job-specific greeting message to the console.
-   */
   jobGreet() {
     console.log(
       `Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}.`
